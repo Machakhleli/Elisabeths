@@ -6,7 +6,7 @@ export default function MainPage() {
       <div className=" absolute top-24 left-28 z-10 w-[40%] h-[70vh] bg-white  flex flex-col justify-center items-center gap-8 ">
         <span>Elisabeth GogoliSvili</span>
         <h1>PHOTOGRAPHY STUDIO</h1>
-        <button className=" w-[6.25rem] cursor-pointer border-b-2 border-black hover:text-gray-500 transition-colors duration-300">
+        <button className=" w-25 cursor-pointer border-b-2 border-black hover:text-gray-500 transition-colors duration-300">
           Book Now
         </button>
       </div>
@@ -14,7 +14,7 @@ export default function MainPage() {
         <img
           src={mainPhoto}
           alt="Photography of photographer"
-          className="w-full h-[100vh] object-cover "
+          className="w-full h-screen object-cover "
         />
       </div>
     </section>

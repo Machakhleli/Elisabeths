@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @layer base {
   body {
     background-color: black;
@@ -8,5 +7,24 @@
 
   li {
     @apply cursor-pointer justify-self-center hover:text-gray-300;
+  }
+
+  @import "tailwindcss";
+
+  .footer {
+    @apply w-full h-20  py-20 bg-black text-white flex justify-between items-center;
+  }
+
+  .footer-text {
+    @apply px-30 text-sm opacity-80;
+  }
+
+  .footer-social-media {
+    @apply w-[50%] flex justify-around px-20;
+  }
+
+  /* Reusable span style */
+  .social-link {
+    @apply cursor-pointer hover:text-gray-300 transition duration-300;
   }
 }
