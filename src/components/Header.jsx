@@ -16,7 +16,7 @@ export default function Header() {
       >
         <h1>Elisabeth Gogolishvili</h1>
       </Link>
-      <ul className="w-3xl grid grid-cols-5 place-items-center items-center list-none text-white ">
+      <ul className="w-3xl flex justify-end items-center gap-8 list-none text-white pr-6 ">
         <Dropdown title="Portfolio" links={portfolioLinks} />
         <li>
           <Link to={"/services"}> Services</Link>
