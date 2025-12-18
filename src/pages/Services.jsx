@@ -28,7 +28,7 @@ export default function Services() {
     },
     {
       id: 1,
-      title: "Commertial",
+      title: "Commercial",
       image: commercialMain,
       duration: "3 hours",
       price: "Price Varies",
@@ -36,11 +36,11 @@ export default function Services() {
   ];
 
   return (
-    <section className="mx-auto w-full max-w-[90rem] min-h-screen flex flex-col items-center gap-20 lg:gap-60 p-6 md:p-10 bg-black">
-      <h1 className="text-white text-center text-5xl md:text-7xl mt-10 lg:mb-20 tracking-widest font-light">
+    <section className="mx-auto w-full max-w-[90rem] min-h-screen flex flex-col items-center gap-20 lg:gap-30 p-6 md:p-6 bg-black">
+      <h1 className="text-white text-center text-5xl md:text-7xl mt-10 lg:mb-10 tracking-widest font-light">
         SERVICES
       </h1>
-      {serviceList.map((service, index) => (
+      {serviceList.map((service) => (
         <div
           key={service.id}
           className="w-full flex flex-col items-center justify-center"
@@ -52,7 +52,7 @@ export default function Services() {
               <img
                 src={service.image}
                 alt={`${service.title} section`}
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer"
+                className="w-full h-auto object-cover hover:scale-105 transition-all duration-200 cursor-pointer"
               />
             </div>
             <div
@@ -80,42 +80,5 @@ export default function Services() {
         </div>
       ))}
     </section>
-
-    // <section className="mx-auto w-full max-w-[90rem] min-h-screen flex flex-col gap-60 p-10">
-    //   <h1 className="text-white text-center text-7xl mb-20">SERVICES</h1>
-    //   {serviceList.map((service) => (
-    //     <div
-    //       key={service.id}
-    //       className="w-full flex flex-col items-center justify-center mb-40"
-    //     >
-    //       <div className="relative flex justify-center items-center w-full max-w-5xl h-[25rem]">
-    //         <div className="w-1/2 overflow-hidden">
-    //           <img
-    //             src={service.image}
-    //             alt={`${service.title} section`}
-    //             className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 cursor-pointer"
-    //           />
-    //         </div>
-
-    //         <div className="absolute right-0 lg:-right-25 w-[28rem] h-[23rem] bg-white flex flex-col justify-center items-start p-16 gap-8 shadow-2xl">
-    //           <h2 className="text-5xl font-light hover:text-gray-500 cursor-pointer transition-colors">
-    //             {service.title}
-    //           </h2>
-
-    //           <hr className="w-full border-t border-black opacity-30" />
-
-    //           <div className="flex flex-col gap-2 text-black uppercase tracking-widest text-sm font-semibold">
-    //             <span>{service.duration}</span>
-    //             <span>{service.price}</span>
-    //           </div>
-
-    //           <button className="border border-black py-2 px-8 cursor-pointer w-fit uppercase text-xs tracking-widest hover:bg-black hover:text-white transition-all">
-    //             Book Now
-    //           </button>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   ))}
-    // </section>
   );
 }
