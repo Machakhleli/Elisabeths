@@ -1,9 +1,16 @@
+import { useState } from "react";
 import portraitMain from "../assets/Sh.m.png";
 import familyMain from "../assets/family.png";
 import maternityMain from "../assets/maternity.jpg";
 import commercialMain from "../assets/commercial.png";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
 export default function Services() {
+  const [booking, setBooking] = useState(null);
+
+  const [date, setDate] = useState(new Date()); //calendar
+
   const serviceList = [
     {
       id: 1,
@@ -13,21 +20,21 @@ export default function Services() {
       price: "Price Varies",
     },
     {
-      id: 1,
+      id: 2,
       title: "Family",
       image: familyMain,
       duration: "3 hours",
       price: "Price Varies",
     },
     {
-      id: 1,
+      id: 3,
       title: "Maternity",
       image: maternityMain,
       duration: "3 hours",
       price: "Price Varies",
     },
     {
-      id: 1,
+      id: 4,
       title: "Commercial",
       image: commercialMain,
       duration: "3 hours",
@@ -42,17 +49,20 @@ export default function Services() {
       </h1>
       {serviceList.map((service) => (
         <div
-          key={service.id}
+          key={`service-${service.id}`}
           className="w-full flex flex-col items-center justify-center"
         >
           {/* Main Container: Relative on Desktop, Static on Mobile */}
           <div className="relative flex flex-col lg:flex-row justify-center items-center w-full max-w-5xl">
             {/* 1. Image Container: Full width on mobile, 60% on desktop */}
-            <div className="w-full lg:w-3/5 aspect-[4/5] lg:aspect-auto h-[300px] md:h-[500px] lg:h-[35rem] overflow-hidden">
+            <div
+              className="w-full lg:w-3/5 aspect-[4/5] lg:aspect-auto h-[300px] md:h-[500px] lg:h-[35rem] overflow-hidden"
+              onClick={() => setBooking(service)}
+            >
               <img
                 src={service.image}
-                alt={`${service.title} section`}
-                className="w-full h-auto object-cover hover:scale-105 transition-all duration-200 cursor-pointer"
+                alt={service.title}
+                className="w-full h-auto object-cover hover:scale-90 transition-all duration-200 cursor-pointer"
               />
             </div>
             <div
@@ -72,13 +82,64 @@ export default function Services() {
                 <span>{service.duration}</span>
                 <span>{service.price}</span>
               </div>
-              <button className="border border-black py-2 px-8 cursor-pointer w-fit uppercase text-[10px] md:text-xs tracking-widest hover:bg-black hover:text-white transition-all">
+              <button
+                className="border border-black py-2 px-8 cursor-pointer w-fit uppercase text-[10px] md:text-xs tracking-widest hover:bg-black hover:text-white transition-all"
+                onClick={() => setBooking(service)}
+              >
                 Book Now
               </button>
             </div>
           </div>
         </div>
       ))}
+      {booking && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+          <div
+            className="absolute inset-0 bg-black/90 backdrop-blur-sm"
+            onClick={() => setBooking(null)}
+          />
+
+          <div className="relative bg-white w-full max-w-lg max-h-[95vh] overflow-y-auto p-5 sm:p-8 md:p-10 shadow-2xl flex flex-col gap-6 scrollbar-hide">
+            <button
+              className="absolute top-4 right-4 text-black text-2xl hover:rotate-90 transition-transform cursor-pointer"
+              onClick={() => setBooking(null)}
+            >
+              ✕
+            </button>
+            <div className="text-center border-b pb-4">
+              <h3 className="text-xl md:text-2xl font-light tracking-widest text-black border-b pb-4">
+                BOOKING: {booking.title.toUpperCase()}
+              </h3>
+            </div>
+            /* THE CALENDAR */
+            <div className="calendar-container flex flex-col items-center">
+              <Calendar
+                onChange={setDate}
+                value={date}
+                minDate={new Date()} // Prevents booking in the past
+                className="responsive-calendar"
+              />
+              <div className="mt-6 w-full p-4 bg-gray-50 text-center rounded-sm">
+                <p className="text-[10px] uppercase tracking-widest text-gray-500">
+                  Selected Date
+                </p>
+                <p className="text-sm font-bold text-black">
+                  {date.toDateString()}
+                </p>
+              </div>
+            </div>
+            <button
+              className="bg-black text-white py-4 px-6 uppercase text-xs tracking-widest hover:opacity-40 transition-all active:scale-95 cursor-pointer"
+              onClick={() => {
+                alert(`Booking ${booking.title} for ${date.toDateString()}`);
+                setBooking(null);
+              }}
+            >
+              Confirm Appointment
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
