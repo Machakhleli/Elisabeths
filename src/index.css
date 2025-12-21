@@ -12,7 +12,7 @@
   @import "tailwindcss";
 
   .footer {
-    @apply w-full h-20  py-20 bg-black text-white flex justify-between items-center;
+    @apply w-full h-20 py-20 bg-black text-white flex justify-between items-center;
   }
 
   .footer-text {
@@ -27,4 +27,26 @@
   .social-link {
     @apply cursor-pointer hover:text-gray-300 transition duration-300;
   }
+}
+
+/* Custom Styles for React Calendar */
+.react-calendar {
+  width: 100% !important;
+  border: none !important;
+  font-family: inherit !important;
+}
+
+/* Round the selection circle and make it black */
+.react-calendar__tile--active {
+  background: black !important;
+  color: white !important;
+  border-radius: 5px;
+}
+
+.react-calendar__tile:hover {
+  background-color: #f3f4f6 !important;
+}
+
+.react-calendar__navigation button:hover {
+  background-color: #f3f4f6 !important;
 }

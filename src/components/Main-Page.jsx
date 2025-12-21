@@ -3,9 +3,9 @@ import mainPhoto from "../assets/main-photo.jpg";
 export default function MainPage() {
   return (
     <section className="relative w-full h-full flex justify-end ">
-      <div className=" absolute top-24 left-28 z-10 w-[40%] h-[70vh] bg-white  flex flex-col justify-center items-center gap-8 ">
-        <span>Elisabeth GogoliSvili</span>
-        <h1>PHOTOGRAPHY STUDIO</h1>
+      <div className=" absolute top-40 left-28 z-10 w-[40%] h-[70vh] bg-white  flex flex-col justify-center items-center gap-20 ">
+        <span className="text-3xl">Elisabeth GogoliSvili</span>
+        <h1 className="text-6xl text-center">PHOTOGRAPHY STUDIO</h1>
         <button className=" w-25 cursor-pointer border-b-2 border-black hover:text-gray-500 transition-colors duration-300">
           Book Now
         </button>
