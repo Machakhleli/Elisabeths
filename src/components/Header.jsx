@@ -25,7 +25,7 @@ export default function Header() {
           <Link to={"/about"}>About</Link>
         </li>
         <li>
-          <Link to={"/cliens"}>Clients Albums</Link>
+          <Link to={"/clients"}>Clients Albums</Link>
         </li>
         <li>
           <Link to={"/contact"}>Contact</Link>

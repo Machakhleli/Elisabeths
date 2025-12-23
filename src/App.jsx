@@ -12,9 +12,11 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/services" element={<Services />} />
         <Route path="/about" element={<h2>About </h2>} />
-        <Route path="/cliens" element={<h2>Clients Albums </h2>} />
+        {/* Fixed typo from /cliens to /clients */}
+        <Route path="/clients" element={<h2>Clients Albums </h2>} />
         <Route path="/contact" element={<h2>Contact </h2>} />
-        {/* portfolio routes */}
+
+        {/* Portfolio routes */}
         <Route path="/portfolio/portrait" element={<h2>Portrait </h2>} />
         <Route path="/portfolio/family" element={<h2>Family </h2>} />
         <Route path="/portfolio/maternity" element={<h2>Maternity </h2>} />
