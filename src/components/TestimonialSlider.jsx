@@ -23,7 +23,7 @@ export default function TestimonialSlider({ reviews }) {
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 6000 }}
-        className="pb-12"
+        className="space-y-10 text-center"
       >
         {reviews.map((review) => (
           <SwiperSlide key={review.id}>
