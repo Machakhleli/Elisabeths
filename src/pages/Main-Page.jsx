@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import mainPhoto from "../assets/main-photo.jpg";
-import BookingModal from "./BookingModal";
+import BookingModal from "../components/BookingModal";
 
 export default function MainPage() {
   const [searchParams, setSearchParams] = useSearchParams();

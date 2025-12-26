@@ -19,7 +19,7 @@ export default function BookingModal({ booking, onClose }) {
   const timeSlots = ["10:00 am", "12:00 pm", "14:00 pm", "16:00 pm"];
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 md:p-10">
+    <div className="fixed inset-0 z-100 flex items-center justify-center p-0 md:p-10">
       {/* 2. Calendar Styling (Tailwind-compatible) */}
       <style>{`
         .react-calendar { border: none !important; width: 100% !important; font-family: inherit; }
