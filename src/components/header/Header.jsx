@@ -13,7 +13,6 @@ export default function Header() {
 
       <nav>
         <ul className="flex items-center gap-10 list-none uppercase text-[11px] tracking-[0.2em]">
-          {/* Using your dedicated Dropdown component */}
           <PortfolioDropdown />
 
           <li className="hover:text-gray-400 transition-colors">

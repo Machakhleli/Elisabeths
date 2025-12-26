@@ -25,7 +25,7 @@ export default function Contact() {
         Contact
       </h1>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 py-24 items-start grayscale place-self-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 py-24 items-start grayscale place-self-end">
         <div className="flex flex-col gap-12 pt-10 grayscale">
           <div>
             <h2 className="text-sm tracking-[0.3em] text-zinc-500 uppercase mb-6">
