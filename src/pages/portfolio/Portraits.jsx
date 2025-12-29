@@ -18,11 +18,11 @@ export default function Portraits() {
   return (
     <section className="min-h-screen bg-black text-white px-6 md:px-20 pb-32 pt-10">
       {/* Header Area */}
-      <div className="max-w-7xl mx-auto py-20 text-center md:text-left">
-        <h1 className="text-5xl md:text-7xl font-light tracking-tighter uppercase mb-4">
+      <div className="max-w-7xl mx-auto py-20 text-center ">
+        <h1 className="text-5xl md:text-7xl font-light tracking-tighter uppercase mb-6">
           Portraits
         </h1>
-        <p className="text-zinc-500 uppercase tracking-[0.3em] text-[10px] border-l border-zinc-800 pl-6">
+        <p className="text-zinc-500 uppercase tracking-[0.3em] text-[10px] max-w-md mx-auto leading-relaxed">
           A study of light and character.
         </p>
       </div>

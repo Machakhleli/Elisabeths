@@ -6,16 +6,10 @@ import BookingModal from "../components/BookingModal";
 export default function MainPage() {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // Check if "book=true" exists in the URL
   const isModalOpen = searchParams.get("book") === "true";
-
-  // Open: Adds ?book=true to URL
   const openModal = () => setSearchParams({ book: "true" });
-
-  // Close: Clears the URL parameters
   const closeModal = () => setSearchParams({});
 
-  // ESC Key listener
   useEffect(() => {
     const handleEsc = (e) => {
       if (e.key === "Escape") closeModal();
@@ -25,29 +19,47 @@ export default function MainPage() {
   }, []);
 
   return (
-    <section className="relative w-full h-full flex justify-end ">
-      <div className="absolute top-40 left-28 z-10 w-[40%] h-[70vh] bg-white flex flex-col justify-center items-center gap-20 shadow-2xl">
-        <span className="text-3xl">Elisabeth GogoliSvili</span>
-        <h1 className="text-6xl text-center">PHOTOGRAPHY STUDIO</h1>
+    // min-h-screen ensures it takes the full window height
+    <section className="relative w-full min-h-screen flex flex-col lg:flex-row lg:justify-end bg-black overflow-x-hidden">
+      {/* TEXT OVERLAY BOX */}
+      {/* On desktop, we use lg:top-1/2 to keep it centered while the header sits at the top */}
+      <div
+        className="
+        relative lg:absolute 
+        mt-32 mb-10 mx-6 
+        lg:mt-0 lg:mb-0 lg:top-1/2 lg:-translate-y-1/2 lg:left-28 
+        z-10 
+        w-[calc(100%-3rem)] lg:w-[40%] 
+        min-h-[50vh] lg:h-[70vh] 
+        bg-white flex flex-col justify-center items-center gap-10 md:gap-20 
+        shadow-2xl p-8 md:p-12
+      "
+      >
+        <span className="text-xl md:text-3xl font-light tracking-widest uppercase text-black">
+          Elisabeth Gogolishvili
+        </span>
 
-        {/* Trigger */}
+        <h1 className="text-4xl md:text-6xl text-center font-light leading-tight tracking-tighter text-black">
+          PHOTOGRAPHY <br className="hidden md:block" /> STUDIO
+        </h1>
+
         <button
           onClick={openModal}
-          className="w-25 cursor-pointer border-b-2 border-black hover:text-gray-500 transition-colors duration-300 uppercase text-sm tracking-widest pb-1"
+          className="cursor-pointer border-b-2 border-black text-black hover:text-gray-500 transition-colors duration-300 uppercase text-sm tracking-[0.3em] pb-1"
         >
           Book Now
         </button>
       </div>
 
-      <div className="w-[65%] h-full">
+      {/* IMAGE CONTAINER */}
+      <div className="w-full lg:w-[65%] h-[70vh] lg:h-screen">
         <img
           src={mainPhoto}
           alt="Main portrait"
-          className="w-full h-screen object-cover"
+          className="w-full h-full object-cover grayscale md:grayscale-0"
         />
       </div>
 
-      {/* Modal renders only when URL contains ?book=true */}
       {isModalOpen && (
         <BookingModal
           booking={{

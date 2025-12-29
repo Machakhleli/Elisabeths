@@ -1,63 +1,80 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
 
-export default function PortfolioDropdown() {
+export default function PortfolioDropdown({ isMobile, closeMobileMenu }) {
   const [open, setOpen] = useState(false);
+
+  const links = [
+    { to: "/portfolio/portrait", label: "Portraits" },
+    { to: "/portfolio/family", label: "Family" },
+    { to: "/portfolio/maternity", label: "Maternity" },
+    { to: "/portfolio/commercial", label: "Commercial" },
+  ];
 
   return (
     <li
-      className="relative h-full flex items-center" // Added flex/h-full to ensure a solid hit area
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      className={`relative list-none ${
+        isMobile ? "w-full text-center" : "h-full flex items-center"
+      }`}
+      onMouseEnter={() => !isMobile && setOpen(true)}
+      onMouseLeave={() => !isMobile && setOpen(false)}
     >
-      <span className="cursor-pointer hover:text-gray-300 transition uppercase text-[11px] tracking-[0.2em]">
+      {/* Click for Mobile, Display for Desktop */}
+      <div
+        onClick={() => isMobile && setOpen(!open)}
+        className="flex items-center justify-center gap-2 cursor-pointer hover:text-zinc-400 transition uppercase lg:text-[11px] text-[15px] lg:tracking-[0.2em] tracking-[0.3em]"
+      >
         Portfolio
-      </span>
+        <ChevronDown
+          size={14}
+          className={`transition-transform ${open ? "rotate-180" : ""}`}
+        />
+      </div>
 
-      {open && (
-        /* Removed 'mt-3' and added 'pt-3' so there is no gap for the mouse to fall through */
-        <ul className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-48 z-50 shadow-lg">
-          {/* Inner container with the actual background and styling */}
-          <div className="bg-black/90 backdrop-blur-md border border-zinc-800 py-2">
-            <li>
+      {/* Dropdown/Accordion Logic */}
+      <div
+        className={`
+        ${
+          isMobile
+            ? `overflow-hidden transition-all duration-500 ${
+                open ? "max-h-64 opacity-100 mt-6" : "max-h-0 opacity-0"
+              }`
+            : `absolute top-[100%] left-1/2 -translate-x-1/2 pt-4 w-48 z-[9999] transition-all duration-300 ${
+                open
+                  ? "visible opacity-100 translate-y-0"
+                  : "invisible opacity-0 translate-y-2"
+              }`
+        }
+      `}
+      >
+        <ul
+          className={`${
+            !isMobile
+              ? "bg-black border border-white/10 py-4 shadow-2xl"
+              : "flex flex-col gap-4 border-l border-white/10 ml-4 py-2"
+          }`}
+        >
+          {links.map((link) => (
+            <li key={link.to}>
               <Link
-                to="/portfolio/portrait"
-                onClick={() => setOpen(false)}
-                className="block px-4 py-2 hover:bg-white/10 transition-colors text-center"
+                to={link.to}
+                onClick={() => {
+                  setOpen(false);
+                  if (isMobile) closeMobileMenu();
+                }}
+                className={`block px-4 py-2 uppercase tracking-[0.2em] text-[10px] ${
+                  isMobile
+                    ? "text-left pl-6 text-zinc-400"
+                    : "text-center text-white hover:bg-white/5"
+                }`}
               >
-                Portraits
+                {link.label}
               </Link>
             </li>
-            <li>
-              <Link
-                to="/portfolio/family"
-                onClick={() => setOpen(false)}
-                className="block px-4 py-2 hover:bg-white/10 transition-colors text-center"
-              >
-                Family
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/portfolio/maternity"
-                onClick={() => setOpen(false)}
-                className="block px-4 py-2 hover:bg-white/10 transition-colors text-center"
-              >
-                Maternity
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/portfolio/commercial"
-                onClick={() => setOpen(false)}
-                className="block px-4 py-2 hover:bg-white/10 transition-colors text-center"
-              >
-                Commercial
-              </Link>
-            </li>
-          </div>
+          ))}
         </ul>
-      )}
+      </div>
     </li>
   );
 }

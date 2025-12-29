@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Instagram, Facebook, Twitter, Youtube } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,116 +11,146 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
-    alert("Thank you! Your message has been sent.");
-  };
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    // Handle form submission logic here (e.g., EmailJS or a backend API)
+    console.log("Form submitted:", formData);
+    alert("Thank you for your message. I will get back to you soon.");
   };
 
   return (
-    <section className="min-h-screen bg-black text-white px-6 md:px-20 pb-20 pt-10">
-      <h1 className="text-4xl md:text-7xl py-20 text-center font-light tracking-wide uppercase border-b border-zinc-800">
-        Contact
-      </h1>
+    <section className="min-h-screen bg-black text-white pt-32 pb-20 px-6 md:px-20">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="mb-20 text-center md:text-left">
+          <h1 className="text-5xl md:text-8xl font-light tracking-tighter uppercase mb-6">
+            Contact
+          </h1>
+          <p className="text-zinc-500 uppercase tracking-[0.4em] text-[10px]">
+            Let’s create something beautiful together.
+          </p>
+        </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 py-24 items-start grayscale place-self-end">
-        <div className="flex flex-col gap-12 pt-10 grayscale">
-          <div>
-            <h2 className="text-sm tracking-[0.3em] text-zinc-500 uppercase mb-6">
-              Location
-            </h2>
-            <p className="text-xl font-light">Batumi, Adjara, Georgia</p>
-            <p className="text-zinc-400">Available for travel worldwide</p>
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+          {/* Left Side: Contact Info */}
+          <div className="space-y-12">
+            <div>
+              <h3 className="text-zinc-500 uppercase tracking-widest text-[10px] mb-6">
+                Inquiries
+              </h3>
+              <div className="space-y-4">
+                <a
+                  href="mailto:hello@elisabeth.com"
+                  className="flex items-center gap-4 group text-xl font-light hover:text-zinc-400 transition"
+                >
+                  <Mail
+                    size={18}
+                    strokeWidth={1}
+                    className="text-zinc-600 group-hover:text-white transition"
+                  />
+                  hello@elisabeth.com
+                </a>
+                <a
+                  href="tel:+995000000000"
+                  className="flex items-center gap-4 group text-xl font-light hover:text-zinc-400 transition"
+                >
+                  <Phone
+                    size={18}
+                    strokeWidth={1}
+                    className="text-zinc-600 group-hover:text-white transition"
+                  />
+                  +995 000 000 000
+                </a>
+              </div>
+            </div>
 
-          <div>
-            <h2 className="text-sm tracking-[0.3em] text-zinc-500 uppercase mb-6">
-              Direct
-            </h2>
-            <p className="text-xl font-light">info@elisabethphoto.com</p>
-            <p className="text-xl font-light">+995 555 00 00 00</p>
-          </div>
+            <div>
+              <h3 className="text-zinc-500 uppercase tracking-widest text-[10px] mb-6">
+                Location
+              </h3>
+              <p className="flex items-center gap-4 text-xl font-light">
+                <MapPin size={18} strokeWidth={1} className="text-zinc-600" />
+                Tbilisi, Georgia
+              </p>
+            </div>
 
-          <div>
-            <h2 className="text-sm tracking-[0.3em] text-zinc-500 uppercase mb-6">
-              Social
-            </h2>
-            <div className="flex gap-8 items-center text-zinc-400">
-              <a href="#" className="hover:text-white transition-colors">
-                <Instagram size={22} strokeWidth={1.5} />
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                <Facebook size={22} strokeWidth={1.5} />
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                <Twitter size={22} strokeWidth={1.5} />
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                <Youtube size={22} strokeWidth={1.5} />
+            <div>
+              <h3 className="text-zinc-500 uppercase tracking-widest text-[10px] mb-6">
+                Follow
+              </h3>
+              <a
+                href="#"
+                className="flex items-center gap-4 group text-xl font-light hover:text-zinc-400 transition"
+              >
+                <Instagram
+                  size={18}
+                  strokeWidth={1}
+                  className="text-zinc-600 group-hover:text-white transition"
+                />
+                @elisabeth_photography
               </a>
             </div>
           </div>
-        </div>
-        {/* Right Side: THE WHITE FORM */}
-        <div className="bg-white p-8 md:p-12 shadow-2xl text-black">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+
+          {/* Right Side: Form */}
+          <form onSubmit={handleSubmit} className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="flex flex-col gap-2">
-                <label className="text-[12px] uppercase tracking-widest text-black">
+              <div className="group relative">
+                <label className="text-[9px] uppercase tracking-widest text-zinc-600 mb-2 block transition-colors group-focus-within:text-white">
                   Name
                 </label>
                 <input
                   type="text"
-                  name="name"
                   required
-                  className="bg-transparent border-b border-zinc-200 py-2 focus:border-black outline-none transition text-black"
-                  onChange={handleChange}
+                  className="w-full bg-transparent border-b border-zinc-800 py-3 outline-none focus:border-white transition-colors font-light text-lg"
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                 />
               </div>
-              <div className="flex flex-col gap-2">
-                <label className="text-[12px] uppercase tracking-widest text-black">
+              <div className="group relative">
+                <label className="text-[9px] uppercase tracking-widest text-zinc-600 mb-2 block transition-colors group-focus-within:text-white">
                   Email
                 </label>
                 <input
                   type="email"
-                  name="email"
                   required
-                  className="bg-transparent border-b border-zinc-200 py-2 focus:border-black outline-none transition text-black"
-                  onChange={handleChange}
+                  className="w-full bg-transparent border-b border-zinc-800 py-3 outline-none focus:border-white transition-colors font-light text-lg"
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                 />
               </div>
             </div>
 
-            <div className="flex flex-col gap-2">
-              <label className="text-[12px] uppercase tracking-widest text-black">
+            <div className="group relative">
+              <label className="text-[9px] uppercase tracking-widest text-zinc-600 mb-2 block transition-colors group-focus-within:text-white">
                 Subject
               </label>
               <input
                 type="text"
-                name="subject"
-                className="bg-transparent border-b border-zinc-200 py-2 focus:border-black outline-none transition text-black"
-                onChange={handleChange}
+                className="w-full bg-transparent border-b border-zinc-800 py-3 outline-none focus:border-white transition-colors font-light text-lg"
+                onChange={(e) =>
+                  setFormData({ ...formData, subject: e.target.value })
+                }
               />
             </div>
 
-            <div className="flex flex-col gap-2">
-              <label className="text-[12px] uppercase tracking-widest text-black">
+            <div className="group relative">
+              <label className="text-[9px] uppercase tracking-widest text-zinc-600 mb-2 block transition-colors group-focus-within:text-white">
                 Message
               </label>
               <textarea
-                name="message"
                 rows="4"
                 required
-                className="bg-zinc-50 border border-zinc-200 p-4 focus:border-black outline-none transition resize-none text-black"
-                onChange={handleChange}
-              ></textarea>
+                className="w-full bg-transparent border-b border-zinc-800 py-3 outline-none focus:border-white transition-colors font-light text-lg resize-none"
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
+              />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-black text-white py-4 uppercase text-[10px] tracking-[0.3em] font-bold hover:bg-white hover:text-black border transition cursor-pointer"
+              className="mt-10 px-12 py-4 border border-zinc-800 uppercase text-[11px] tracking-[0.3em] font-light hover:bg-white hover:text-black transition-all duration-500"
             >
               Send Message
             </button>
