@@ -81,12 +81,12 @@ export default function Portraits() {
       {/* LIGHTBOX OVERLAY */}
       {selectedIdx !== null && (
         <div
-          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-10 transition-opacity duration-300"
+          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-10 transition-opacity duration-300 "
           onClick={closeLightbox}
         >
           {/* Close Button */}
           <button
-            className="absolute top-10 right-10 text-white hover:text-zinc-400 z-[110] transition-transform hover:scale-110"
+            className="absolute top-10 right-10 text-white hover:text-zinc-400 z-[110] transition-transform hover:scale-110 cursor-pointer"
             onClick={closeLightbox}
           >
             <X size={40} strokeWidth={1} />
@@ -94,14 +94,14 @@ export default function Portraits() {
 
           {/* Navigation Arrows */}
           <button
-            className="absolute left-4 md:left-10 text-white hover:text-zinc-400 z-[110] transition-transform hover:scale-110"
+            className="absolute left-4 md:left-10 text-white hover:text-zinc-400 z-[110] transition-transform hover:scale-110 cursor-pointer"
             onClick={showPrev}
           >
             <ChevronLeft size={48} strokeWidth={1} />
           </button>
 
           <button
-            className="absolute right-4 md:right-10 text-white hover:text-zinc-400 z-[110] transition-transform hover:scale-110"
+            className="absolute right-4 md:right-10 text-white hover:text-zinc-400 z-[110] transition-transform hover:scale-110 cursor-pointer"
             onClick={showNext}
           >
             <ChevronRight size={48} strokeWidth={1} />
