@@ -19,21 +19,18 @@ export default function Footer() {
             href="#"
             className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-light text-white hover:text-zinc-500 transition-colors flex items-center gap-2"
           >
-            <Facebook size={14} strokeWidth={1} />
             <span className="hidden sm:inline">Facebook</span>
           </a>
           <a
             href="#"
             className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-light text-white hover:text-zinc-500 transition-colors flex items-center gap-2"
           >
-            <Instagram size={14} strokeWidth={1} />
             <span className="hidden sm:inline">Instagram</span>
           </a>
           <a
             href="#"
             className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-light text-white hover:text-zinc-500 transition-colors flex items-center gap-2"
           >
-            <Globe size={14} strokeWidth={1} />
             <span className="hidden sm:inline">Behance</span>
           </a>
         </div>
