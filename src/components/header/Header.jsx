@@ -17,14 +17,14 @@ export default function Header() {
       {/* Logo */}
       <Link
         to="/"
-        className="text-xl md:text-3xl font-light tracking-tighter z-[1100]"
+        className=" font-display text-xl md:text-3xl font-light tracking-tighter z-[1100]"
       >
         <h1>Elisabeth Gogolishvili</h1>
       </Link>
 
       {/* DESKTOP NAV - Hidden on Mobile */}
       <nav className="hidden lg:block h-full">
-        <ul className="flex items-center h-full gap-10 list-none uppercase text-[11px] tracking-[0.2em]">
+        <ul className="font-sans flex items-center h-full gap-10 list-none uppercase text-[11px] tracking-[0.2em]">
           <PortfolioDropdown isMobile={false} />
           <li className="hover:text-zinc-400 transition-colors">
             <Link to="/services">Services</Link>
