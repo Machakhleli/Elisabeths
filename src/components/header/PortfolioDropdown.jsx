@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
 
 export default function PortfolioDropdown({ isMobile, closeMobileMenu }) {
   const [open, setOpen] = useState(false);
@@ -26,10 +25,6 @@ export default function PortfolioDropdown({ isMobile, closeMobileMenu }) {
         className="flex items-center justify-center gap-2 cursor-pointer hover:text-zinc-400 transition uppercase lg:text-[11px] text-[15px] lg:tracking-[0.2em] tracking-[0.3em]"
       >
         Portfolio
-        <ChevronDown
-          size={14}
-          className={`transition-transform ${open ? "rotate-180" : ""}`}
-        />
       </div>
 
       {/* Dropdown/Accordion Logic */}
@@ -40,7 +35,7 @@ export default function PortfolioDropdown({ isMobile, closeMobileMenu }) {
             ? `overflow-hidden transition-all duration-500 ${
                 open ? "max-h-64 opacity-100 mt-6" : "max-h-0 opacity-0"
               }`
-            : `absolute top-[100%] left-1/2 -translate-x-1/2 pt-4 w-48 z-[9999] transition-all duration-300 ${
+            : `absolute top-[50%] left-1/2 -translate-x-1/2 pt-4 w-32 z-[9999] transition-all duration-300  ${
                 open
                   ? "visible opacity-100 translate-y-0"
                   : "invisible opacity-0 translate-y-2"
@@ -51,8 +46,8 @@ export default function PortfolioDropdown({ isMobile, closeMobileMenu }) {
         <ul
           className={`${
             !isMobile
-              ? "bg-black border border-white/10 py-4 shadow-2xl"
-              : "flex flex-col gap-4 border-l border-white/10 ml-4 py-2"
+              ? "bg-black  py-4 shadow-2xl"
+              : "flex flex-col gap-4 ml-4 py-2"
           }`}
         >
           {links.map((link) => (

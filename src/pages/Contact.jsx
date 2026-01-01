@@ -150,7 +150,7 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="mt-10 px-12 py-4 border border-zinc-800 uppercase text-[11px] tracking-[0.3em] font-light hover:bg-white hover:text-black transition-all duration-500"
+              className="mt-10 px-12 py-4 border border-zinc-800 uppercase text-[11px] tracking-[0.3em] font-light hover:bg-white hover:text-black transition-all duration-500 cursor-pointer"
             >
               Send Message
             </button>

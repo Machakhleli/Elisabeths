@@ -13,7 +13,7 @@ export default function Header() {
   }, [location]);
 
   return (
-    <header className="absolute top-0 left-0 w-full h-24 md:h-[7.5rem] flex justify-between items-center z-[1000] px-6 md:px-12 text-white">
+    <header className="w-full h-24 md:h-[7.5rem] flex justify-between items-center z-[1000] px-6 md:px-12 text-white">
       {/* Logo */}
       <Link
         to="/"
