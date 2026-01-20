@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import { FaInstagram, FaFacebook, FaBehance } from "react-icons/fa";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,7 +17,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="min-h-screen bg-black text-white pt-32 pb-20 px-6 md:px-20">
+    <section className="min-h-screen bg-black text-white pt-10 pb-20 px-6 md:px-20">
       <div className="max-w-7xl mx-auto">
         {/* CENTERED HEADER */}
         <div className="mb-24 text-center">
@@ -48,7 +49,7 @@ export default function Contact() {
                   hello@elisabeth.com
                 </a>
                 <a
-                  href="tel:+995000000000"
+                  href="tel:+995598645460"
                   className="font-display flex items-center gap-6 group text-2xl md:text-3xl font-light italic hover:text-zinc-400 transition-colors"
                 >
                   <Phone
@@ -56,7 +57,7 @@ export default function Contact() {
                     strokeWidth={1}
                     className="text-zinc-600 group-hover:text-white transition-colors"
                   />
-                  +995 000 000 000
+                  +995 598 64 54 60
                 </a>
               </div>
             </div>
@@ -75,17 +76,33 @@ export default function Contact() {
               <h3 className="font-sans text-zinc-500 uppercase tracking-[0.4em] text-[9px] mb-8">
                 Follow
               </h3>
-              <a
-                href="#"
-                className="font-display flex items-center gap-6 group text-2xl md:text-3xl font-light italic hover:text-zinc-400 transition-colors"
+              <div
+                className="font-display flex items-center gap-6 group text-2xl md:text-3xl font-light italic
+               "
               >
-                <Instagram
-                  size={20}
-                  strokeWidth={1}
-                  className="text-zinc-600 group-hover:text-white transition-colors"
-                />
-                @elisabeth_photography
-              </a>
+                {" "}
+                <a
+                  href="https://www.instagram.com/captured_by_elizabeth/"
+                  target="_blank"
+                  className=" hover:text-zinc-400 transition-colors"
+                >
+                  <FaInstagram size={40} />
+                </a>
+                <a
+                  href="https://www.facebook.com/Elizabeth.Gogolishvili/"
+                  target="_blank"
+                  className="hover:text-zinc-400 transition-colors"
+                >
+                  <FaFacebook size={40} />
+                </a>
+                <a
+                  href="https://www.behance.net/"
+                  target="_blank"
+                  className="hover:text-zinc-400 transition-colors"
+                >
+                  <FaBehance size={40} />
+                </a>
+              </div>
             </div>
           </div>
 
