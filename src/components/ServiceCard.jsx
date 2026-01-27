@@ -3,7 +3,7 @@ export default function ServiceCard({ service, onBook }) {
     <div className="w-full flex flex-col items-center justify-center">
       <div className="relative flex flex-col lg:flex-row justify-center items-center w-full max-w-5xl">
         <div
-          className="w-full lg:w-3/5 aspect-[4/5] lg:aspect-auto h-[350px] md:h-[500px] lg:h-[35rem] overflow-hidden cursor-pointer"
+          className="w-full lg:w-3/5 aspect-4/5 lg:aspect-auto h-350px md:h-500px lg:h-35rem overflow-hidden cursor-pointer"
           onClick={onBook}
         >
           <img
@@ -13,7 +13,7 @@ export default function ServiceCard({ service, onBook }) {
           />
         </div>
 
-        <div className="relative z-10 -mt-12 lg:mt-0 lg:absolute lg:right-[-5%] w-[90%] md:w-[70%] lg:w-[28rem] bg-white p-8 md:p-12 lg:p-16 flex flex-col gap-6 shadow-2xl">
+        <div className="relative z-10 -mt-12 lg:mt-0 lg:absolute lg:right-[-5%] w-[90%] md:w-[70%] lg:w-28rem bg-white p-8 md:p-12 lg:p-16 flex flex-col gap-6 shadow-2xl">
           <h2 className="text-3xl md:text-5xl font-light text-black uppercase">
             {service.title}
           </h2>

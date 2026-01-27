@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap");
 
 @tailwind utilities;
@@ -12,7 +12,6 @@
     @apply cursor-pointer justify-self-center hover:text-gray-300;
   }
 
-  @import "tailwindcss";
 
   .footer {
     @apply w-full h-20 py-20 bg-black text-white flex justify-between items-center;
@@ -27,19 +26,19 @@
   }
 
   /* Reusable span style */
-  .social-link {
+/* .social-link {
     @apply cursor-pointer hover:text-gray-300 transition duration-300;
   }
 }
 
-/* Custom Styles for React Calendar */
+/* Custom Styles for React Calendar 
 .react-calendar {
   width: 100% !important;
   border: none !important;
   font-family: inherit !important;
 }
 
-/* Round the selection circle and make it black */
+/* Round the selection circle and make it black 
 .react-calendar__tile--active {
   background: black !important;
   color: white !important;
@@ -52,4 +51,72 @@
 
 .react-calendar__navigation button:hover {
   background-color: #f3f4f6 !important;
+}*/
+
+@import "tailwindcss";
+
+/* 1. THEME BLOCK: This replaces tailwind.config.js entirely */
+@theme {
+  /* Register your Google Fonts into Tailwind's font-family utilities */
+  --font-display: "Cormorant Garamond", serif;
+  --font-sans: "Montserrat", sans-serif;
+
+  /* High-end editorial tracking (matching your project style) */
+  --tracking-editorial: 0.5em;
+
+  /* Use OKLCH for more vibrant, modern grays/blacks */
+  --color-zinc-950: oklch(0.15 0 0);
+}
+
+/* 2. BASE STYLES */
+@layer base {
+  @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap");
+
+  body {
+    /* v4 automatically handles 'antialiased' for better text rendering on dark themes */
+    @apply bg-black text-white antialiased;
+  }
+
+  li {
+    @apply cursor-pointer hover:text-zinc-300 transition-colors duration-200;
+  }
+}
+
+/* 3. COMPONENT CLASSES */
+@layer components {
+  .footer {
+    /* Removed fixed h-20 as it conflicted with py-20 */
+    @apply w-full py-20 bg-black text-white flex flex-col md:flex-row justify-between items-center border-t border-zinc-900;
+  }
+
+  .footer-text {
+    /* Responsive padding (px-30 is quite large; adjusted for mobile) */
+    @apply px-6 md:px-30 text-sm opacity-60 font-sans tracking-wide;
+  }
+
+  .footer-social-media {
+    @apply w-full md:w-1/2 flex justify-around px-10 md:px-20 mt-8 md:mt-0;
+  }
+
+  .social-link {
+    @apply cursor-pointer hover:text-zinc-400 transition-all duration-300 uppercase text-[10px] tracking-widest;
+  }
+}
+
+/* 4. THIRD-PARTY OVERRIDES (React Calendar) */
+/* v4 is stricter with '!'. We use standard CSS or the v4 important utility. */
+.react-calendar {
+  @apply w-full ! border-none ! bg-white p-4;
+  font-family: inherit !important;
+}
+
+.react-calendar__tile--active {
+  @apply bg-black ! text-white ! rounded-sm;
+}
+
+.react-calendar__tile:hover,
+.react-calendar__navigation button:hover {
+  /* Using standard CSS for third-party overrides is often safer in v4 */
+  background-color: oklch(0.96 0 0) !important;
+  /* light zinc hover */
 }

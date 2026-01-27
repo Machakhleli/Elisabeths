@@ -12,7 +12,7 @@ export default function Maternity() {
 
   const showPrev = () =>
     setSelectedIdx(
-      (prev) => (prev - 1 + maternityGallery.length) % maternityGallery.length
+      (prev) => (prev - 1 + maternityGallery.length) % maternityGallery.length,
     );
 
   return (
@@ -32,7 +32,7 @@ export default function Maternity() {
           <div
             key={photo.id}
             onClick={() => setSelectedIdx(index)}
-            className="relative aspect-[4/5] overflow-hidden group cursor-pointer bg-zinc-900"
+            className="relative aspect-4/5 overflow-hidden group cursor-pointer bg-zinc-900"
           >
             <img
               src={photo.src}

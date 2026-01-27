@@ -29,7 +29,7 @@ function App() {
     <div className="bg-black min-h-screen flex flex-col">
       <Header />
 
-      <main className="flex-grow">
+      <main className="flex grow">
         <Routes>
           {/* Main Home Page */}
           <Route path="/" element={<MainPage />} />
