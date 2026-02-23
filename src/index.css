@@ -11,7 +11,7 @@
   @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap");
 
   body {
-    @apply bg-black text-white antialiased;
+    @apply bg-black text-white;
   }
 
   li {

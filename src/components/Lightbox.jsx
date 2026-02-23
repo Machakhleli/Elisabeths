@@ -57,11 +57,11 @@ export default function Lightbox({
 
   return (
     <div
-      className="fixed inset-0 z-[100] bg-black/98 flex items-center justify-center p-4 md:p-10 backdrop-blur-sm transition-opacity duration-300"
+      className="fixed inset-0 z-100 bg-black/98 flex items-center justify-center p-4 md:p-10 backdrop-blur-sm transition-opacity duration-300"
       onClick={onClose}
     >
       <button
-        className="absolute top-10 right-10 text-white z-[110] cursor-pointer"
+        className="absolute top-10 right-10 text-white z-110 cursor-pointer"
         onClick={onClose}
       >
         <X size={40} strokeWidth={1} />
@@ -69,7 +69,7 @@ export default function Lightbox({
 
       {/* Nav Buttons */}
       <button
-        className="absolute left-4 md:left-10 text-white z-[110] hover:scale-110 transition cursor-pointer"
+        className="absolute left-4 md:left-10 text-white z-110 hover:scale-110 transition cursor-pointer"
         onClick={(e) => {
           e.stopPropagation();
           triggerPrev();
@@ -78,7 +78,7 @@ export default function Lightbox({
         <ChevronLeft size={48} strokeWidth={1} />
       </button>
       <button
-        className="absolute right-4 md:right-10 text-white z-[110] hover:scale-110 transition cursor-pointer"
+        className="absolute right-4 md:right-10 text-white z-110 hover:scale-110 transition cursor-pointer"
         onClick={(e) => {
           e.stopPropagation();
           triggerNext();

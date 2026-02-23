@@ -8,7 +8,7 @@ export default function Services() {
   const [date, setDate] = useState(new Date());
 
   return (
-    <section className="mx-auto w-full max-w-[90rem] min-h-screen flex flex-col items-center gap-20 p-6 bg-black">
+    <section className="mx-auto w-full max-w-90rem min-h-screen flex flex-col items-center gap-20 p-6 bg-black">
       <h1 className="text-white text-center text-5xl md:text-7xl mt-10 tracking-widest font-light uppercase">
         Services
       </h1>

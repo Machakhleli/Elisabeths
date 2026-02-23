@@ -24,7 +24,7 @@ export default function Contact() {
           <h1 className="font-display text-7xl md:text-9xl font-light tracking-tighter uppercase italic mb-6">
             Contact
           </h1>
-          <p className="font-sans text-zinc-500 uppercase tracking-[0.5em] text-[10px]">
+          <p className="font-sans text-zinc-500 uppercase tracking-0.5em text-[10px]">
             Let’s create something beautiful together.
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function Contact() {
               <div className="space-y-6">
                 <a
                   href="mailto:hello@elisabeth.com"
-                  className="font-display flex items-center gap-6 group text-2xl md:text-3xl font-light italic hover:text-zinc-400 transition-colors"
+                  className="font-display flex items-center gap-6 group text-2xl md:text-3xl font-light  hover:text-zinc-400 transition-colors"
                 >
                   <Mail
                     size={20}
@@ -50,7 +50,7 @@ export default function Contact() {
                 </a>
                 <a
                   href="tel:+995598645460"
-                  className="font-display flex items-center gap-6 group text-2xl md:text-3xl font-light italic hover:text-zinc-400 transition-colors"
+                  className="font-display flex items-center gap-6 group text-2xl md:text-3xl font-light  hover:text-zinc-400 transition-colors"
                 >
                   <Phone
                     size={20}
@@ -66,7 +66,7 @@ export default function Contact() {
               <h3 className="font-sans text-zinc-500 uppercase tracking-[0.4em] text-[9px] mb-8">
                 Location
               </h3>
-              <p className="font-display flex items-center gap-6 text-2xl md:text-3xl font-light italic">
+              <p className="font-display flex items-center gap-6 text-2xl md:text-3xl font-light ">
                 <MapPin size={20} strokeWidth={1} className="text-zinc-600" />
                 Tbilisi, Georgia
               </p>
@@ -77,7 +77,7 @@ export default function Contact() {
                 Follow
               </h3>
               <div
-                className="font-display flex items-center gap-6 group text-2xl md:text-3xl font-light italic
+                className="font-display flex items-center gap-6 group text-2xl md:text-3xl font-light
                "
               >
                 {" "}
