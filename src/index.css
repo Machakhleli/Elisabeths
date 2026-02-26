@@ -7,7 +7,6 @@
   --font-sans: "Montserrat", sans-serif;
   --tracking-editorial: 0.5em;
   --color-zinc-950: oklch(0.15 0 0);
-  --color-calendar-hover: #f4f4f5;
 }
 
 @layer base {
@@ -18,7 +17,7 @@
 
 @layer components {
 
-  /* --- Global Components --- */
+  /* Footer Component */
   .footer {
     @apply flex w-full flex-col items-center justify-between border-t border-zinc-900 bg-black py-20 text-white md:flex-row;
   }
@@ -27,7 +26,15 @@
     @apply px-6 font-sans text-sm tracking-wide opacity-60 md:px-30;
   }
 
-  /* --- React Calendar Fix for v4 --- */
+  .footer-social-media {
+    @apply mt-8 flex w-full justify-around px-10 md:mt-0 md:w-1/2 md:px-20;
+  }
+
+  .social-link {
+    @apply cursor-pointer text-[10px] uppercase tracking-widest transition-all duration-300 hover:text-zinc-400;
+  }
+
+  /* --- React Calendar Overrides (Standard CSS for v4.2.1 Compatibility) --- */
   .react-calendar {
     width: 100% !important;
     border: none !important;
@@ -43,15 +50,16 @@
   }
 
   .react-calendar__tile:hover {
-    background-color: var(--color-calendar-hover) !important;
+    background-color: #f4f4f5 !important;
   }
 
   .react-calendar__navigation button {
     color: black !important;
-    transition: all 0.2s !important;
+    font-size: 1.2rem !important;
   }
 
-  .react-calendar__navigation button:hover {
+  .react-calendar__navigation button:enabled:hover,
+  .react-calendar__navigation button:enabled:focus {
     background-color: #f4f4f5 !important;
   }
 }
