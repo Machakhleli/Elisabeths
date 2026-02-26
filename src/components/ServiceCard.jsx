@@ -13,14 +13,36 @@ export default function ServiceCard({ service, onBook }) {
           />
         </div>
 
-        <div className="relative z-10 mt-12 lg:mt-80 lg:absolute lg:right-[-5%] w-[70%] md:w-[50%] lg:w-28rem bg-white p-8 md:p-12 lg:p-16 flex flex-col gap-6 shadow-2xl">
-          <h2 className="text-3xl md:text-5xl font-light text-black uppercase">
+        <div
+          className="
+          /* Mobile: Negative margin pulls it UP over the image slightly */
+          z-10 -mt-16 w-[90%] bg-white p-8 flex flex-col gap-6 shadow-2xl
+          
+          /* Tablet: Wider card, more padding */
+          md:w-[55%] md:p-12 md:-mt-24
+          
+          /* Desktop: Absolute positioning, centered vertically on the right edge */
+          lg:absolute lg:right-0 lg:mt-80 lg:w-[45%] lg:p-6 lg:translate-x-[10%]
+          
+          /* Ultra Wide: Lock the width so it doesn't get too big */
+          xl:w-400px xl:translate-x-[20%]
+        "
+        >
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-light text-black uppercase leading-tight">
             {service.title}
           </h2>
-          <hr className="w-full border-t border-black opacity-30" />
-          <div className="flex flex-col gap-2 text-black uppercase tracking-widest text-xs font-semibold">
-            <span>{service.duration}</span>
-            <span>{service.price}</span>
+
+          <hr className="w-full border-t border-black/20" />
+
+          <div className="flex flex-col gap-2 text-black uppercase tracking-widest text-[10px] md:text-xs font-semibold">
+            <div className="flex justify-between lg:flex-col lg:gap-2">
+              <span className="opacity-60 lg:opacity-100">Duration</span>
+              <span>{service.duration}</span>
+            </div>
+            <div className="flex justify-between lg:flex-col lg:gap-2 mt-2 lg:mt-0">
+              <span className="opacity-60 lg:opacity-100">Investment</span>
+              <span>{service.price}</span>
+            </div>
           </div>
           <button
             onClick={onBook}
