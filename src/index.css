@@ -1,5 +1,8 @@
+/* 1. ALL imports must be at the very top */
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap");
 
+/* 2. Theme definitions */
 @theme {
   --font-display: "Cormorant Garamond", serif;
   --font-sans: "Montserrat", sans-serif;
@@ -7,11 +10,12 @@
   --color-zinc-950: oklch(0.15 0 0);
 }
 
+/* 3. Base Styles */
 @layer base {
-  @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap");
-
   body {
     @apply bg-black text-white;
+    font-family: var(--font-sans);
+    /* Good practice to set default font here */
   }
 
   li {
@@ -19,6 +23,7 @@
   }
 }
 
+/* 4. Component Styles */
 @layer components {
   .footer {
     @apply w-full py-20 bg-black text-white flex flex-col md:flex-row justify-between items-center border-t border-zinc-900;
@@ -37,7 +42,7 @@
   }
 }
 
-/* --- React Calendar Overrides (Fixed Syntax) --- */
+/* 5. Custom Overrides */
 .react-calendar {
   width: 100% !important;
   border: none !important;

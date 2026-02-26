@@ -9,7 +9,7 @@ export default function Family() {
     setSelectedIdx((prev) => (prev + 1) % familyGallery.length);
   const showPrev = () =>
     setSelectedIdx(
-      (prev) => (prev - 1 + familyGallery.length) % familyGallery.length
+      (prev) => (prev - 1 + familyGallery.length) % familyGallery.length,
     );
 
   return (
@@ -25,7 +25,7 @@ export default function Family() {
           <div
             key={photo.id}
             onClick={() => setSelectedIdx(index)}
-            className="relative aspect-[4/5] overflow-hidden group cursor-pointer"
+            className="relative aspect-4/5 overflow-hidden group cursor-pointer"
           >
             <img
               src={photo.src}
