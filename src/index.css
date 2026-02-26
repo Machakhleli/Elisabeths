@@ -1,28 +1,18 @@
 @import "tailwindcss";
 
-/* 1. Imports must remain at the absolute top */
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap");
 
 @theme {
-  /* v4 automatically generates font-display and font-sans classes */
   --font-display: "Cormorant Garamond", serif;
   --font-sans: "Montserrat", sans-serif;
-
   --tracking-editorial: 0.5em;
-
-  /* Adding custom colors to theme for consistent use in overrides */
   --color-zinc-950: oklch(0.15 0 0);
   --color-calendar-hover: #f4f4f5;
 }
 
 @layer base {
   body {
-    /* Using theme variables directly */
     @apply bg-black text-white font-sans;
-  }
-
-  li {
-    @apply cursor-pointer transition-colors duration-200 hover:text-zinc-300;
   }
 }
 
@@ -37,30 +27,31 @@
     @apply px-6 font-sans text-sm tracking-wide opacity-60 md:px-30;
   }
 
-  .footer-social-media {
-    @apply mt-8 flex w-full justify-around px-10 md:mt-0 md:w-1/2 md:px-20;
-  }
-
-  .social-link {
-    @apply cursor-pointer text-[10px] uppercase tracking-widest transition-all duration-300 hover:text-zinc-400;
-  }
-
-  /* --- React Calendar v4 Improvement --- */
-  /* Using @apply ensures these use the Tailwind engine */
+  /* --- React Calendar Fix for v4 --- */
   .react-calendar {
-    @apply w-full border-none bg-white p-6 font-inherit;
+    width: 100% !important;
+    border: none !important;
+    background-color: white !important;
+    padding: 1.5rem !important;
+    font-family: inherit !important;
   }
 
   .react-calendar__tile--active {
-    @apply rounded-sm bg-black text-white
+    background-color: black !important;
+    color: white !important;
+    border-radius: 2px !important;
   }
 
   .react-calendar__tile:hover {
-    @apply bg-[--color-calendar-hover];
+    background-color: var(--color-calendar-hover) !important;
   }
 
-  /* Better handling of calendar navigation buttons */
   .react-calendar__navigation button {
-    @apply text-black hover:bg-zinc-100 transition-colors;
+    color: black !important;
+    transition: all 0.2s !important;
+  }
+
+  .react-calendar__navigation button:hover {
+    background-color: #f4f4f5 !important;
   }
 }

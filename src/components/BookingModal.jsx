@@ -20,6 +20,9 @@ export default function BookingModal({ booking, onClose }) {
 
   return (
     <div className="fixed inset-0 z-100 flex items-center justify-center p-0 md:p-10">
+      {/* CORRECT: !important is allowed here inside standard CSS strings.
+        This is necessary to override the react-calendar default styles.
+      */}
       <style>{`
         .react-calendar { border: none !important; width: 100% !important; font-family: inherit; background: transparent !important; }
         .react-calendar__tile { 
@@ -41,7 +44,7 @@ export default function BookingModal({ booking, onClose }) {
         onClick={onClose}
       />
 
-      {/* Container - Added text-black here to force all text inside to be visible */}
+      {/* Container */}
       <div className="relative bg-white text-black w-full max-w-6xl h-full md:h-auto md:max-h-[90vh] overflow-hidden flex flex-col md:flex-row shadow-2xl">
         {/* Desktop Close Button */}
         <button
@@ -90,7 +93,6 @@ export default function BookingModal({ booking, onClose }) {
                 next2Label={null}
               />
 
-              {/* TIME SLOTS FIX: Added text-zinc-800 and border-zinc-200 */}
               <div className="w-full lg:w-48 flex flex-col gap-2">
                 {timeSlots.map((t) => (
                   <button
@@ -108,7 +110,7 @@ export default function BookingModal({ booking, onClose }) {
               </div>
             </div>
           ) : (
-            /* STEP 2: USER FORM FIX: Added text-zinc-500 and text-black */
+            /* STEP 2: FORM */
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in duration-500">
               {[
                 { label: "First Name", type: "text" },
@@ -125,7 +127,7 @@ export default function BookingModal({ booking, onClose }) {
                   </label>
                   <input
                     type={field.type}
-                    className="border-b border-gray-300 py-2 outline-none focus:border-black text-black"
+                    className="border-b border-gray-300 py-2 outline-none focus:border-black text-black bg-transparent"
                   />
                 </div>
               ))}
@@ -135,7 +137,7 @@ export default function BookingModal({ booking, onClose }) {
                 </label>
                 <textarea
                   rows="3"
-                  className="border border-gray-200 p-3 outline-none focus:border-black resize-none text-black"
+                  className="border border-gray-200 p-3 outline-none focus:border-black resize-none text-black bg-transparent"
                   placeholder="Anything else we should know?"
                 />
               </div>
