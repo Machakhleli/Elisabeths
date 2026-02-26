@@ -24,7 +24,7 @@ export default function ServiceCard({ service, onBook }) {
           </div>
           <button
             onClick={onBook}
-            className="border border-black py-3 px-10 uppercase text-xs tracking-widest hover:bg-black hover:text-white transition-all cursor-pointer"
+            className="border border-black py-3 px-10 uppercase text-xs text-black tracking-widest hover:bg-black hover:text-white transition-all cursor-pointer"
           >
             Book Now
           </button>
