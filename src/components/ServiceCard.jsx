@@ -13,7 +13,7 @@ export default function ServiceCard({ service, onBook }) {
           />
         </div>
 
-        <div className="relative z-10 -mt-12 lg:mt-0 lg:absolute lg:right-[-5%] w-[90%] md:w-[70%] lg:w-28rem bg-white p-8 md:p-12 lg:p-16 flex flex-col gap-6 shadow-2xl">
+        <div className="relative z-10 mt-12 lg:mt-80 lg:absolute lg:right-[-5%] w-[70%] md:w-[50%] lg:w-28rem bg-white p-8 md:p-12 lg:p-16 flex flex-col gap-6 shadow-2xl">
           <h2 className="text-3xl md:text-5xl font-light text-black uppercase">
             {service.title}
           </h2>
