@@ -48,19 +48,19 @@
   /* --- React Calendar v4 Improvement --- */
   /* Using @apply ensures these use the Tailwind engine */
   .react-calendar {
-    @apply w-full ! border-none ! bg-white ! p-6 ! font-inherit !;
+    @apply w-full border-none bg-white p-6 font-inherit;
   }
 
   .react-calendar__tile--active {
-    @apply rounded-sm ! bg-black ! text-white !
+    @apply rounded-sm bg-black text-white
   }
 
   .react-calendar__tile:hover {
-    @apply bg-[--color-calendar-hover] !;
+    @apply bg-[--color-calendar-hover];
   }
 
   /* Better handling of calendar navigation buttons */
   .react-calendar__navigation button {
-    @apply text-black ! hover:bg-zinc-100 ! transition-colors;
+    @apply text-black hover:bg-zinc-100 transition-colors;
   }
 }
