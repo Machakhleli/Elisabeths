@@ -10,6 +10,8 @@ import MainPage from "./pages/Main-Page";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Services from "./pages/Services";
+import ClientsAlbums from "./pages/ClientsAlbums";
+import AlbumView from "./pages/Album";
 
 // Portfolio Pages (Inside the portfolio folder)
 import Portraits from "./pages/portfolio/Portraits";
@@ -43,10 +45,9 @@ function App() {
           {/* Navigation Pages */}
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
+          <Route path="/clients" element={<ClientsAlbums />} />
+          <Route path="/clients/:albumId" element={<AlbumView />} />
           <Route path="/contact" element={<Contact />} />
-
-          {/* If you create a ClientsAlbums.jsx in pages, uncomment this: */}
-          {/* <Route path="/clients" element={<ClientsAlbums />} /> */}
 
           {/* Catch-all Redirect */}
           <Route path="*" element={<MainPage />} />
