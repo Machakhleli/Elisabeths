@@ -1,3 +1,4 @@
+// src/data/services.js
 import portraitMain from "../assets/Sh.m.png";
 import familyMain from "../assets/family.png";
 import maternityMain from "../assets/maternity.jpg";
@@ -10,6 +11,7 @@ export const serviceList = [
     image: portraitMain,
     duration: "3 hours",
     price: "Price Varies",
+    path: "/portfolio/portrait", // Matches the route in App.jsx
   },
   {
     id: "srv-family",
@@ -17,6 +19,7 @@ export const serviceList = [
     image: familyMain,
     duration: "3 hours",
     price: "Price Varies",
+    path: "/portfolio/family", // Matches the route in App.jsx
   },
   {
     id: "srv-maternity",
@@ -24,6 +27,7 @@ export const serviceList = [
     image: maternityMain,
     duration: "3 hours",
     price: "Price Varies",
+    path: "/portfolio/maternity", // Matches the route in App.jsx
   },
   {
     id: "srv-commercial",
@@ -31,5 +35,6 @@ export const serviceList = [
     image: commercialMain,
     duration: "3 hours",
     price: "Price Varies",
+    path: "/portfolio/commercial", // Matches the route in App.jsx
   },
 ];
