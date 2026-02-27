@@ -5,10 +5,29 @@ import ruso4 from "../assets/ruso-chiko/4.png";
 import ruso5 from "../assets/ruso-chiko/5.png";
 import ruso6 from "../assets/ruso-chiko/6.png";
 
+/* Saba's photos*/
+import sabaCover from "../assets/saba/1.png";
+import saba2 from "../assets/saba/2.png";
+import saba3 from "../assets/saba/3.png";
+import saba4 from "../assets/saba/4.png";
+import saba5 from "../assets/saba/5.png";
+
+/* different worlds photos*/
+
+import differentWorldsCover from "../assets/different-worlds/1.png";
+import differentWorlds2 from "../assets/different-worlds/2.png";
+import differentWorlds3 from "../assets/different-worlds/3.png";
+import differentWorlds4 from "../assets/different-worlds/4.png";
+import differentWorlds5 from "../assets/different-worlds/5.png";
+import differentWorlds6 from "../assets/different-worlds/6.png";
+import differentWorlds7 from "../assets/different-worlds/7.png";
+import differentWorlds8 from "../assets/different-worlds/8.png";
+import differentWorlds9 from "../assets/different-worlds/9.png";
+
 export const clientAlbums = [
   {
     id: "ruso-chiko",
-    title: "Ruso Chiko Editorial",
+    title: "Ruso Chiko ",
     client: "Ruso Chiko",
     coverImage: rusosCover,
     photos: [
@@ -22,23 +41,35 @@ export const clientAlbums = [
     path: "/portfolio/commercial",
   },
   {
-    id: "album-002",
-    title: "Minimalist Watch Campaign",
-    client: "Horology Co.",
-    date: "January 2024",
-    coverImage:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000",
-    photos: [],
+    id: "saba",
+    title: "Saba ",
+    client: "Saba",
+    coverImage: sabaCover,
+    photos: [
+      { id: 1, src: sabaCover, alt: "Cover" },
+      { id: 2, src: saba2, alt: "Saba Editorial 2" },
+      { id: 3, src: saba3, alt: "Saba Editorial 3" },
+      { id: 4, src: saba4, alt: "Saba Editorial 4" },
+      { id: 5, src: saba5, alt: "Saba Editorial 5" },
+    ],
     path: "/portfolio/commercial",
   },
   {
-    id: "album-003",
-    title: "Architectural Interior",
-    client: "Luxe Spaces",
-    date: "December 2023",
-    coverImage:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000",
-    photos: [],
+    id: "Different-Worlds",
+    title: "Different Worlds",
+    client: "Some people",
+    coverImage: differentWorldsCover,
+    photos: [
+      { id: 1, src: differentWorldsCover, alt: "Cover" },
+      { id: 2, src: differentWorlds2, alt: "Different Worlds Editorial 2" },
+      { id: 3, src: differentWorlds3, alt: "Different Worlds Editorial 3" },
+      { id: 4, src: differentWorlds4, alt: "Different Worlds Editorial 4" },
+      { id: 5, src: differentWorlds5, alt: "Different Worlds Editorial 5" },
+      { id: 6, src: differentWorlds6, alt: "Different Worlds Editorial 6" },
+      { id: 7, src: differentWorlds7, alt: "Different Worlds Editorial 7" },
+      { id: 8, src: differentWorlds8, alt: "Different Worlds Editorial 8" },
+      { id: 9, src: differentWorlds9, alt: "Different Worlds Editorial 9" },
+    ],
     path: "/portfolio/commercial",
   },
 ];
