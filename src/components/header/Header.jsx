@@ -13,11 +13,11 @@ export default function Header() {
   }, [location]);
 
   return (
-    <header className="w-full h-24 md:h-[7.5rem] flex justify-between items-center z-[1000] px-6 md:px-12 text-white">
+    <header className="w-full h-24 md:h-7.5rem flex justify-between items-center z-1000 px-6 md:px-12 text-white">
       {/* Logo */}
       <Link
         to="/"
-        className=" font-display text-xl md:text-3xl font-light tracking-tighter z-[1100]"
+        className=" font-display text-xl md:text-3xl font-light tracking-tighter z-1100"
       >
         <h1>Elisabeth Gogolishvili</h1>
       </Link>
@@ -43,7 +43,7 @@ export default function Header() {
 
       {/* MOBILE HAMBURGER - Hidden on Desktop */}
       <button
-        className="lg:hidden z-[1100] p-2"
+        className="lg:hidden z-1100 p-2"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         {isMenuOpen ? (
@@ -55,7 +55,7 @@ export default function Header() {
 
       {/* MOBILE MENU OVERLAY */}
       <div
-        className={`fixed inset-0 bg-black transition-transform duration-500 ease-in-out z-[1050] lg:hidden ${
+        className={`fixed inset-0 bg-black transition-transform duration-500 ease-in-out z-1050 lg:hidden ${
           isMenuOpen ? "translate-y-0" : "-translate-y-full"
         }`}
       >

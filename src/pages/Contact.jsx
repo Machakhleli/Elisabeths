@@ -17,7 +17,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="min-h-screen bg-black text-white pt-10 pb-20 px-6 md:px-20">
+    <section className="min-h-screen my-0 mx-auto bg-black text-white pt-10 pb-20 px-6 md:px-20">
       <div className="max-w-7xl mx-auto">
         {/* CENTERED HEADER */}
         <div className="mb-24 text-center">
@@ -109,7 +109,7 @@ export default function Contact() {
           {/* RIGHT SIDE: Form (Occupies 7 columns) */}
           <form
             onSubmit={handleSubmit}
-            className="lg:col-span-7 space-y-10 bg-zinc-950/50 p-8 md:p-12 border border-zinc-900"
+            className="lg:col-span-7 flex flex-col space-y-10 bg-zinc-950/50 p-8 md:p-12 border border-zinc-900"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               <div className="group relative">
@@ -169,7 +169,7 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="font-sans w-full md:w-auto mt-10 px-16 py-4 border border-white text-white uppercase text-[11px] tracking-[0.4em] font-light hover:bg-white hover:text-black transition-all duration-700 cursor-pointer"
+              className="font-sans w-full  md:w-auto mt-10 px-16 py-4 border border-white text-white uppercase text-[11px] tracking-[0.4em] font-light hover:bg-white hover:text-black transition-all duration-700 cursor-pointer"
             >
               Send Message
             </button>
