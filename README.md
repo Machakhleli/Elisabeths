@@ -1,19 +1,55 @@
-# React + Vite
+Elisabeth Gogolishvili | Photography Portfolio
+A premium, minimalist photography portfolio designed with a magazine-style aesthetic. This application features dynamic client albums, a custom light-box gallery, and a fully responsive editorial layout optimized for high-resolution displays (1440px+).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🛠 Features
+Magazine Aesthetic: High-end typography and a grayscale-to-color hover interaction model.
 
-Currently, two official plugins are available:
+Dynamic Client Albums: Automated gallery generation based on a centralized data structure.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Fully Responsive: Custom-built layouts for Mobile, Tablet, and Desktop (specifically optimized for 1440px width).
 
-## React Compiler
+Interactive Gallery: Integrated Lightbox for immersive, full-screen image viewing.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Commercial Focus: Dedicated sections for editorial and commercial photography projects.
 
-## Expanding the ESLint configuration
+🚀 Tech Stack
+React 18 - UI Logic
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Tailwind CSS - Styling & Responsive Design
+
+React Router v6 - Dynamic Routing for Client Albums
+
+Lucide React - Premium Iconography
+
+Vite - Build Tooling
 
 
-using lucide react and react-icons library for icons.
+
+src/
+ ├── assets/          # High-res photography and brand assets
+ ├── components/      # Reusable UI (Footer, Lightbox, Slider)
+ ├── data/            # Project & Album configuration files
+ ├── pages/           # Page-level components (About, Clients, AlbumView)
+ └── App.jsx          # Routing and layout configuration
+
+
+📸 Adding New Albums
+To add a new client gallery, update the src/data/clientAlbums.js file:
+
+Import your images at the top of the file.
+
+Add a new object to the clientAlbums array:
+
+
+<img width="675" height="259" alt="image" src="https://github.com/user-attachments/assets/b799d470-9d63-4bf4-9f69-6b6eb93a890b" />
+
+
+🎨 Design System
+Colors: Deep Black (#000000), Zinc Grays, Pure White.
+
+Typography: * Display: Cormorant Garamond (Italic / Light)
+
+Sans: Montserrat / Inter (Tracking-widest)
+
+
+
