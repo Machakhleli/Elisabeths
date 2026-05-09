@@ -60,7 +60,7 @@ export default function PortfolioDropdown({ isMobile, closeMobileMenu }) {
                 }}
                 className={`block px-4 py-2 uppercase tracking-[0.2em] text-[10px] ${
                   isMobile
-                    ? "text-left pl-6 text-zinc-400"
+                    ? "text-center pl-6 text-zinc-400"
                     : "text-center text-white hover:bg-white/5"
                 }`}
               >
